@@ -1,7 +1,12 @@
-import React from 'react';
+import React,{Fragment, useState} from 'react';
 import Pregunta from './components/Pregunta'
 
 function App() {
+
+  //state
+  const [presupuesto, guardarPresupuesto] = useState(0);
+  const [diferencia, guardarDiferencia] = useState(false);
+
   return (
 
     <div className='container'>
@@ -9,7 +14,10 @@ function App() {
         <h1>Presupuesto</h1>
         
         <div className='contenido-principal contenido'>
-          <Pregunta />
+          <Pregunta
+          guardarPresupuesto={guardarPresupuesto}
+          guardarDiferencia={guardarDiferencia} 
+          />
 
         </div>
       </header>
