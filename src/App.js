@@ -3,14 +3,24 @@ import Pregunta from './components/Pregunta'
 import Formulario from './components/Formulario'
 
 
-function App() {
 
+function App() {
+  
   //state para guardar nuestro presupuesto
   const [presupuesto, guardarPresupuesto] = useState(0);
   const [diferencia, guardarDiferencia] = useState(0);
   const [mostrarpregunta, actualizarPregunta] = useState(true)
+  const [gastos, guardarGastos] = useState([]);
 
+//agregando un nuevo gasto 
 
+const agregarNuevoGasto = gasto =>{
+  guardarGastos([
+    ...gastos,
+    gasto
+  ])
+
+}
   return (
 
     <div className='container'>
@@ -29,7 +39,8 @@ function App() {
             ) : (
               <div className='row'>
                 <div className='one-half column'>
-                  <Formulario />
+                  <Formulario agregarNuevoGasto={agregarNuevoGasto}
+                  />
                 </div>
                 <div className='one-half column'>
                   2
