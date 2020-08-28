@@ -28,9 +28,10 @@ const Formulario = ({ agregarNuevoGasto }) => {
 
         //pasar el gastyo a nuestro componente
         agregarNuevoGasto(gasto)
-        //resetear form
+
+        //resetear form;
         guardarNombre('')
-        guardarCantidad(0)
+        guardarCantidad(0);
     }
 
     return (
@@ -40,6 +41,7 @@ const Formulario = ({ agregarNuevoGasto }) => {
             <h2>Agrega tus gastos</h2>
 
             {error ? <Error mensaje='Ambos campos son obligatoriios o Presupuesto incorrecto' /> : null}
+            
             <div className='campo'>
                 <label>Nombre gastos</label>
                 <input
