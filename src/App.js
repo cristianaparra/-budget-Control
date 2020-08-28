@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Pregunta from './components/Pregunta'
 import Formulario from './components/Formulario'
 import Listado from './components/Listado'
+import Control from './components/Control'
 
 
 
@@ -46,12 +47,14 @@ const agregarNuevoGasto = gasto =>{
                 <div className='one-half column'>
                   <Listado 
                   gastos={gastos}/>
+                  <Control 
+                  presupuesto={presupuesto}
+                  diferencia={diferencia}
+                  />
             </div>
               </div>
             )
             }
-
-
         </div>
       </header>
     </div>
