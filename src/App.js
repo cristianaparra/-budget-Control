@@ -15,12 +15,12 @@ function App() {
   const [gastos, guardarGastos] = useState([]);
   const [gasto, guardarGasto] = useState({});
   const [creargasto, guardarCrearGastos] = useState(false);
+
   //agregando un nuevo gasto 
 
   useEffect(() => {
-
-    //agregar nuevo presupuesto
     if (creargasto) {
+
       guardarGastos([
         ...gastos,
         gasto
@@ -29,13 +29,13 @@ function App() {
 
     // restr del presupuesto actual
 
-    const prespuestoRestante = diferencia - gasto.cantidad
-    guardarDiferencia(prespuestoRestante)
+    const prespuestoRestante = diferencia - gasto.cantidad;
+    guardarDiferencia(prespuestoRestante);
 
     //resetear a false
     guardarCrearGastos(false)
 
-  }, [gasto, gastos, creargasto, diferencia])
+  }, [gasto, creargasto, gastos]);
 
 
 
