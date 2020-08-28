@@ -35,7 +35,7 @@ function App() {
     //resetear a false
     guardarCrearGastos(false)
 
-  }, [gasto])
+  }, [gasto, gastos, creargasto, diferencia])
 
 
 
